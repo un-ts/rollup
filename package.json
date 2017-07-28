@@ -1,0 +1,27 @@
+{
+  "name": "rollup-plugin-insert",
+  "version": "0.0.1",
+  "description": "string mutation plugin for rollup",
+  "main": "insert.js",
+  "repository": "https://github.com/JounQin/rollup-plugin-insert.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint . --max-warnings 10",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "rimraf dist && jest"
+  },
+  "peerDependencies": {
+    "rollup": "*"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.3.0",
+    "eslint-config-1stg": "^0.0.4",
+    "jest": "^20.0.4",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.45.2",
+    "rollup-pluginutils": "^2.0.1"
+  }
+}
