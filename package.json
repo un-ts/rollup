@@ -6,11 +6,15 @@
   "repository": "https://github.com/JounQin/rollup-plugin-insert.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "files": [
+    "insert.js"
+  ],
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint . --max-warnings 10",
     "lint:fix": "npm run lint -- --fix",
-    "test": "rimraf dist && jest"
+    "test": "rimraf dist && jest",
+    "prepublishOnly": "npm run test"
   },
   "peerDependencies": {
     "rollup": "*"
