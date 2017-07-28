@@ -9,6 +9,6 @@ const read = file => fs.readFileSync(path.resolve(__dirname, '..', file + '.js')
 
 test('should generate correctly', done =>
   rollup(config).then(bundle => bundle.write(config)).then(() => {
-    expect(read('dist/index')).toBe(read('test/expect'))
+    expect(read('dist/index')).toBe(read('test/expect').replace('$$', path.resolve(__dirname, '../src/template.html')))
     done()
   }))
