@@ -3,7 +3,7 @@ import path from 'path'
 
 import {rollup} from 'rollup'
 
-import config from '../rollup.config'
+import config from './rollup.test.config'
 
 const read = file => fs.readFileSync(path.resolve(__dirname, '..', file + '.js')).toString()
 
