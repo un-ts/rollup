@@ -1,6 +1,11 @@
 # rollup-plugin-insert
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/JounQin/rollup-plugin-insert.svg)](https://greenkeeper.io/)
+[![Travis](https://img.shields.io/travis/JounQin/rollup-plugin-insert.svg)](https://travis-ci.org/JounQin/rollup-plugin-insert)
+[![Codecov](https://img.shields.io/codecov/c/github/JounQin/rollup-plugin-insert.svg)](https://codecov.io/gh/JounQin/rollup-plugin-insert)
+[![David](https://img.shields.io/david/JounQin/rollup-plugin-insert.svg)](https://david-dm.org/JounQin/rollup-plugin-insert)
+[![David Dev](https://img.shields.io/david/dev/JounQin/rollup-plugin-insert.svg)](https://david-dm.org/JounQin/rollup-plugin-insert?type=dev)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 string mutation plugin for rollup
 
