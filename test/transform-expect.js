@@ -1,7 +1,7 @@
 var template = "<!--$$-->\n<div class=\"test\">\n  <%- msg %>\n</div>\n";
 
-var index = {
+var transform = {
   template
 };
 
-export default index;
+export default transform;

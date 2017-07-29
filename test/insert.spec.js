@@ -3,12 +3,64 @@ import path from 'path'
 
 import {rollup} from 'rollup'
 
-import config from './rollup.test.config'
+import insert from '../insert'
 
-const read = file => fs.readFileSync(path.resolve(__dirname, '..', file + '.js')).toString()
+const resolve = file => path.resolve(__dirname, file + '.js')
+const read = file => fs.readFileSync(resolve(file)).toString()
 
-test('should generate correctly', done =>
-  rollup(config).then(bundle => bundle.write(config)).then(() => {
-    expect(read('dist/index')).toBe(read('test/expect').replace('$$', path.resolve(__dirname, '../src/template.html')))
-    done()
-  }))
+const format = {format: 'es'}
+
+test('should add file path comment in html template correctly', async done => {
+  const bundle = await rollup({
+    entry: resolve('transform'),
+    plugins: [
+      insert.transform((code, id) => `export default ${JSON.stringify(`<!--${id}-->\n${code}`)}`, {
+        include: '**/*.html'
+      })
+    ]
+  })
+
+  const {code} = await bundle.generate(format)
+
+  expect(code).toBe(read('transform-expect').replace('$$', path.resolve(__dirname, 'template.html')))
+  done()
+})
+
+test('should append code correctly', async done => {
+  const bundle = await rollup({
+    entry: resolve('append'),
+    plugins: [insert.append('export default append')]
+  })
+
+  const {code} = await bundle.generate(format)
+
+  expect(code).toMatch(/export default append;\s*$/)
+
+  done()
+})
+
+test('should prepend code correctly', async done => {
+  const bundle = await rollup({
+    entry: resolve('prepend'),
+    plugins: [insert.prepend('const prepend = () => {}\n')]
+  })
+
+  const {code} = await bundle.generate(format)
+
+  expect(code).toMatch(/^const prepend = \(\) => {}/)
+
+  done()
+})
+
+test('should wrap code correctly', async done => {
+  const bundle = await rollup({
+    entry: resolve('wrap'),
+    plugins: [insert.wrap('const wrap = () => {}\n', 'export default wrapped')]
+  })
+
+  const {code} = await bundle.generate(format)
+
+  expect(code).toMatch(/^const wrap = \(\) => {}[\s\S]+export default wrapped;\s*$/)
+
+  done()
+})

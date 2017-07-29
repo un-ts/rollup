@@ -16,20 +16,30 @@
     "build": "rollup -c",
     "lint": "eslint . --max-warnings 10",
     "lint:fix": "npm run lint -- --fix",
-    "test": "rimraf dist && jest",
+    "test": "jest",
+    "codecov": "codecov",
     "prepublishOnly": "npm run test && npm run build"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "insert.js"
+    ],
+    "collectCoverage": true
   },
   "peerDependencies": {
     "rollup": "*"
   },
+  "dependencies": {
+    "rollup-pluginutils": "^2.0.1"
+  },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
+    "codecov": "^2.2.0",
     "eslint": "^4.3.0",
     "eslint-config-1stg": "^0.0.4",
     "jest": "^20.0.4",
     "rimraf": "^2.6.1",
     "rollup": "^0.45.2",
-    "rollup-plugin-buble": "^0.15.0",
-    "rollup-pluginutils": "^2.0.1"
+    "rollup-plugin-buble": "^0.15.0"
   }
 }

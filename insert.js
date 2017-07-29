@@ -14,8 +14,8 @@ const transform = (insert, options = {}) => {
 }
 
 export default {
-  append: (append, options) => transform(code => append + code, options),
-  prepend: (prepend, options) => transform(code => code + prepend, options),
+  append: (append, options) => transform(code => code + append, options),
+  prepend: (prepend, options) => transform(code => prepend + code, options),
   wrap: (begin, end, options) => transform(code => begin + code + end, options),
   transform
 }

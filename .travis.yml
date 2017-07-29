@@ -12,7 +12,9 @@ script:
   - yarn lint
   - yarn test
 
-after_script: greenkeeper-lockfile-upload
+after_script:
+  - greenkeeper-lockfile-upload
+  - yarn codecov
 
 deploy:
   provider: npm
