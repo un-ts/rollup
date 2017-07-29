@@ -13,10 +13,10 @@ string mutation plugin for rollup
 ## Usage
 
 ``` bash
-// npm
+# npm
 npm install -D rollup-plugin-insert
 
-// yarn
+# yarn
 yarn add -D rollup-plugin-insert
 ```
 
