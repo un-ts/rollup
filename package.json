@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-insert",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "string mutation plugin for rollup",
   "main": "index.js",
   "module": "insert.js",
