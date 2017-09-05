@@ -14,7 +14,7 @@ export default {
   input: 'insert.js',
   output: {
     file: 'index.js',
-    format: 'cjs',
+    format: 'cjs'
   },
   plugins: [buble()],
   external: ['rollup-pluginutils']
