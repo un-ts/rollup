@@ -21,7 +21,7 @@ yarn add -D rollup-plugin-insert
 ```
 
 ``` js
-import insert from 'rollup-plugin-insert'
+import * as insert from 'rollup-plugin-insert'
 ```
 
 ## Common Usage

@@ -12,7 +12,7 @@ const format = {format: 'es'}
 
 test('should add file path comment in html template correctly', async done => {
   const bundle = await rollup({
-    entry: resolve('transform'),
+    input: resolve('transform'),
     plugins: [
       insert.transform((code, id) => `export default ${JSON.stringify(`<!--${id}-->\n${code}`)}`, {
         include: '**/*.html'
@@ -28,7 +28,7 @@ test('should add file path comment in html template correctly', async done => {
 
 test('should append code correctly', async done => {
   const bundle = await rollup({
-    entry: resolve('append'),
+    input: resolve('append'),
     plugins: [insert.append('export default append')]
   })
 
@@ -41,7 +41,7 @@ test('should append code correctly', async done => {
 
 test('should prepend code correctly', async done => {
   const bundle = await rollup({
-    entry: resolve('prepend'),
+    input: resolve('prepend'),
     plugins: [insert.prepend('const prepend = () => {}\n')]
   })
 
@@ -54,7 +54,7 @@ test('should prepend code correctly', async done => {
 
 test('should wrap code correctly', async done => {
   const bundle = await rollup({
-    entry: resolve('wrap'),
+    input: resolve('wrap'),
     plugins: [insert.wrap('const wrap = () => {}\n', 'export default wrapped')]
   })
 

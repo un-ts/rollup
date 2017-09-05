@@ -11,9 +11,11 @@ export default {
  *
  * Github: https://github.com/JounQin/rollup-plugin-insert
  */`,
-  entry: 'insert.js',
-  dest: 'index.js',
-  format: 'cjs',
+  input: 'insert.js',
+  output: {
+    file: 'index.js',
+    format: 'cjs',
+  },
   plugins: [buble()],
   external: ['rollup-pluginutils']
 }
