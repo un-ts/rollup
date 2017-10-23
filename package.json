@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
-    "codecov": "^2.3.0",
+    "codecov": "^3.0.0",
     "eslint": "^4.6.1",
     "eslint-config-1stg": "^0.0.5",
     "jest": "^21.0.1",
