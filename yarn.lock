@@ -22,9 +22,9 @@ acorn-jsx@^3.0.0, acorn-jsx@^3.0.1:
   dependencies:
     acorn "^3.0.4"
 
-acorn5-object-spread@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/acorn5-object-spread/-/acorn5-object-spread-3.1.0.tgz#92e15d6339d91b5fdebbdce71866f6e66bff8f15"
+acorn5-object-spread@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/acorn5-object-spread/-/acorn5-object-spread-4.0.0.tgz#d5758081eed97121ab0be47e31caaef2aa399697"
   dependencies:
     acorn "^5.1.2"
 
@@ -757,13 +757,14 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
-buble@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/buble/-/buble-0.17.0.tgz#2b12a0ec7331e130114c229752dc67871b77a650"
+buble@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/buble/-/buble-0.18.0.tgz#63b338b8248c474b46fd3e3546560ae08d8abe91"
   dependencies:
     acorn "^5.1.2"
     acorn-jsx "^3.0.1"
-    acorn5-object-spread "^3.1.0"
+    acorn5-object-spread "^4.0.0"
+    chalk "^2.1.0"
     magic-string "^0.22.4"
     minimist "^1.2.0"
     os-homedir "^1.0.1"
@@ -2997,11 +2998,11 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-rollup-plugin-buble@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-buble/-/rollup-plugin-buble-0.17.0.tgz#196750362f21ca735617b0acf30d8015b76a4376"
+rollup-plugin-buble@0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-buble/-/rollup-plugin-buble-0.18.0.tgz#6e20d1b2840c59eb496b9f954f75243e51786ac1"
   dependencies:
-    buble "^0.17.0"
+    buble "^0.18.0"
     rollup-pluginutils "^2.0.1"
 
 rollup-pluginutils@^2.0.1:
@@ -3011,9 +3012,9 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@0.51.0:
-  version "0.51.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.51.0.tgz#bee110391dd42a48d61f31804807a80be4a085e5"
+rollup@^0.51.0:
+  version "0.51.7"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.51.7.tgz#3c387316ceca3655727cbef716f2733aa15c46df"
 
 run-async@^2.2.0:
   version "2.3.0"
