@@ -37,7 +37,7 @@
     "codecov": "^3.0.0",
     "eslint": "^4.6.1",
     "eslint-config-1stg": "^0.0.5",
-    "jest": "^21.0.1",
+    "jest": "^22.0.0",
     "rimraf": "^2.6.1",
     "rollup": "^0.52.0",
     "rollup-plugin-buble": "^0.18.0"
