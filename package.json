@@ -36,7 +36,7 @@
     "babel-preset-env": "^1.6.1",
     "codecov": "^3.0.0",
     "eslint": "^5.0.0",
-    "eslint-config-1stg": "^0.0.5",
+    "eslint-config-1stg": "^3.0.0",
     "jest": "^22.0.3",
     "rimraf": "^2.6.2",
     "rollup": "^0.59.0",
