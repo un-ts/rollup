@@ -1,7 +1,7 @@
-var template = "<!--$$-->\n<div class=\"test\">\n  <%- msg %>\n</div>\n"
+var template = "<!--$$-->\n<div class=\"test\">\n  <%- msg %>\n</div>\n";
 
 var transform = {
-  template
-}
+  template,
+};
 
 export default transform;
