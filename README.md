@@ -9,10 +9,9 @@
 
 string mutation plugin for rollup
 
-
 ## Usage
 
-``` bash
+```bash
 # npm
 npm install -D rollup-plugin-insert
 
@@ -20,7 +19,7 @@ npm install -D rollup-plugin-insert
 yarn add -D rollup-plugin-insert
 ```
 
-``` js
+```js
 import * as insert from 'rollup-plugin-insert'
 ```
 
@@ -30,17 +29,21 @@ All following methods has an optional last argument `options` which is an object
 
 It can be used to filter files as you like. For example you can wrapper your html template as following:
 
-``` js
-insert.transform((code, id) => `export default ${JSON.stringify(`<!--add some comments-->${code}`)}`, {
-  include: '**/*.html'
-})
+```js
+insert.transform(
+  (code, id) =>
+    `export default ${JSON.stringify(`<!--add some comments-->${code}`)}`,
+  {
+    include: '**/*.html',
+  },
+)
 ```
 
 ## Append
 
 Appends a string onto the contents.
 
-``` js
+```js
 insert.append('world') // Appends 'world' to the contents of every file
 ```
 
@@ -48,14 +51,15 @@ insert.append('world') // Appends 'world' to the contents of every file
 
 Prepends a string onto the contents.
 
-``` js
+```js
 insert.prepend('Hello') // Prepends 'Hello' to the contents of every file
 ```
+
 ## Wrap
 
 Wraps the contents with two strings.
 
-``` js
+```js
 insert.wrap('Hello', 'World') // prepends 'hello' and appends 'world' to the contents
 ```
 
@@ -63,6 +67,6 @@ insert.wrap('Hello', 'World') // prepends 'hello' and appends 'world' to the con
 
 Calls a function with the contents of the file.
 
-``` js
+```js
 insert.transform((code, id) => code.toUpperCase())
 ```
