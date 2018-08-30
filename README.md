@@ -31,7 +31,7 @@ All following methods has an optional last argument `options` which is an object
 It can be used to filter files as you like. For example you can wrapper your html template as following:
 
 ``` js
-insert.transform((code, id) => `export default ${JSON.stringlify(`<!--add some comments-->${code}`)}`, {
+insert.transform((code, id) => `export default ${JSON.stringify(`<!--add some comments-->${code}`)}`, {
   include: '**/*.html'
 })
 ```
