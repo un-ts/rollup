@@ -10,8 +10,25 @@ export const transform = (insert, options = {}) => {
     transform(code, id) {
       if (!filter(id)) return
 
-      const magicString = new MagicString(code)
-      insert(magicString, id)
+      let magicString = new MagicString(code)
+      const output = insert(magicString, code, id)
+
+      if (typeof output === 'string') {
+        magicString.overwrite(0, code.length, output)
+      } else if (output instanceof MagicString) {
+        magicString = output
+      } else if (output != null) {
+        let received
+        try {
+          received = JSON.stringify(output)
+        } catch (e) {
+          /* istanbul ignore next */
+          received = output.toString()
+        }
+        throw new TypeError(
+          `The output content should be an instance of string or MagicString, but received: ${received}`,
+        )
+      }
 
       return {
         code: magicString.toString(),
@@ -29,3 +46,10 @@ export const prepend = (prepend, options) =>
 
 export const wrap = (begin, end, options) =>
   transform(magicString => magicString.prepend(begin).append(end), options)
+
+export default {
+  transform,
+  append,
+  prepend,
+  wrap,
+}

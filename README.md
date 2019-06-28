@@ -25,19 +25,21 @@ import * as insert from 'rollup-plugin-insert'
 
 ## Common Usage
 
-All following methods has an optional last argument `options` which is an object and contains key `include` and `exclude`.
+All following methods has an optional last argument `options` which is an object and contains key `include`, `exclude` and `sourceMap` which is enabled by default.
 
 It can be used to filter files as you like. For example you can wrapper your html template as following:
 
 ```js
 insert.transform(
-  (code, id) =>
+  (magicString, code, id) =>
     `export default ${JSON.stringify(`<!--add some comments-->${code}`)}`,
   {
     include: '**/*.html',
   },
 )
 ```
+
+If you do not need `sourceMap` at all, just change it to be `false`.
 
 ## Append
 
