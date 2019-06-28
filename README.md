@@ -20,12 +20,17 @@ yarn add -D rollup-plugin-insert
 ```
 
 ```js
+// all of following is fine
 import * as insert from 'rollup-plugin-insert'
+import insert from 'rollup-plugin-insert'
+import { append, prepend, wrap, transform } from 'rollup-plugin-insert'
+
+const insert = require('rollup-plugin-insert')
 ```
 
 ## Common Usage
 
-All following methods has an optional last argument `options` which is an object and contains key `include`, `exclude` and `sourceMap` which is enabled by default.
+All following methods have an optional last argument `options` which is an object and contains key `include`, `exclude` and `sourceMap` which is enabled by default.
 
 It can be used to filter files as you like. For example you can wrapper your html template as following:
 
@@ -70,5 +75,5 @@ insert.wrap('Hello', 'World') // prepends 'hello' and appends 'world' to the con
 Calls a function with the contents of the file.
 
 ```js
-insert.transform((code, id) => code.toUpperCase())
+insert.transform((magicString, code, id) => code.toUpperCase()) // should return a string or MagicString
 ```

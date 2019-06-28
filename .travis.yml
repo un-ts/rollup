@@ -17,6 +17,7 @@ script:
   - set -e
   - yarn lint
   - yarn test
+  - yarn build
   - codecov
 
 after_script: greenkeeper-lockfile-upload
