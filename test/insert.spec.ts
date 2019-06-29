@@ -3,12 +3,12 @@ import path from 'path'
 
 import { rollup } from 'rollup'
 
-import * as insert from '../insert'
+import insert from '../insert'
 
-const resolve = file => path.resolve(__dirname, file + '.js')
-const read = file => fs.readFileSync(resolve(file)).toString()
+const resolve = (file: string) => path.resolve(__dirname, file + '.js')
+const read = (file: string) => fs.readFileSync(resolve(file)).toString()
 
-const format = { format: 'es' }
+const format = { format: 'es' } as const
 const options = { sourceMap: false }
 
 const expectTransformed = read('transform-expect').replace(
@@ -42,7 +42,7 @@ test('should throw error if returned content is not string nor MagicString', asy
   await expect(
     rollup({
       input: resolve('transform'),
-      plugins: [insert.transform(() => 0)],
+      plugins: [insert.transform(() => 0 as any)],
     }),
   ).rejects.toThrow(
     'The output content should be an instance of string or MagicString, but received: 0',

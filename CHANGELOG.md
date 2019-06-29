@@ -13,3 +13,7 @@
 - add more module import usages
 - fix `transform` usage in README
 - build on CI for testing
+
+## 1.1.0
+
+- migrate code base to TypeScript :tada:

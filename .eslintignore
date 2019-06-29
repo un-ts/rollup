@@ -1,8 +1,7 @@
 coverage
 node_modules
-/insert.d.ts
 /insert.cjs.js
 /insert.es.js
-/insert.js.map
-.*cache
-*.log
+/insert.d.ts
+/test
+!/test/insert.spec.ts
