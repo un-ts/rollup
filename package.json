@@ -14,8 +14,7 @@
     "build:r": "r -e named -p",
     "build:ts": "tsc -b",
     "clean": "rimraf packages/*/lib",
-    "lint": "eslint . --cache --ext .js,.ts --max-warnings 10 -f friendly",
-    "prepublishOnly": "yarn test && yarn build",
+    "lint": "eslint . --cache --ext md,js,ts --max-warnings 10 -f friendly",
     "pretest": "yarn clean",
     "test": "jest",
     "type-coverage": "type-coverage --cache --detail --ignore-catch --ignore-files '**/*.d.ts' --strict"

@@ -1,4 +1,5 @@
 .*cache
+.type-coverage
 *.log
 coverage
 lib
