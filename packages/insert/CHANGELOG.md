@@ -1,3 +1,19 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 1.3.0 (2020-01-29)
+
+
+### Features
+
+* migrate to lerna monorepo ([e6e8877](https://github.com/rx-ts/rollup/commit/e6e8877e59a934fb9058b179a2cbff9e18895268))
+
+
+
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
