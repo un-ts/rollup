@@ -1,6 +1,6 @@
 import { createFilter } from 'rollup-pluginutils'
 import MagicString from 'magic-string'
-import { Plugin, RawSourceMap } from 'rollup'
+import { Plugin } from 'rollup'
 
 export interface RollupPluginInsertOptions {
   include?: string
@@ -33,6 +33,7 @@ export const transform = (
         magicString.overwrite(0, code.length, output)
       } else if (output instanceof MagicString) {
         magicString = output
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       } else if (output != null) {
         let received: string
         try {
@@ -48,9 +49,7 @@ export const transform = (
 
       return {
         code: magicString.toString(),
-        map: sourceMap
-          ? (magicString.generateMap() as RawSourceMap)
-          : undefined,
+        map: sourceMap ? magicString.generateMap() : undefined,
       }
     },
   }

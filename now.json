@@ -1,0 +1,19 @@
+{
+  "name": "rollup",
+  "version": 2,
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "src": "*.md",
+      "use": "@now/md"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/*",
+      "dest": "README.html"
+    }
+  ]
+}

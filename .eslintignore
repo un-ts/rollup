@@ -1,7 +1,5 @@
 coverage
 node_modules
-/insert.cjs.js
-/insert.es.js
-/insert.d.ts
+/lib
 /test
 !/test/insert.spec.ts
