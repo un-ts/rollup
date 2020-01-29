@@ -1,0 +1,32 @@
+{
+  "name": "rollup-plugin-insert",
+  "version": "1.2.0",
+  "description": "string mutation plugin for Rollup",
+  "repository": "git+https://github.com/rx-ts/rollup.git",
+  "homepage": "https://github.com/rx-ts/rollup/blob/master/packages/insert",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/rxts"
+  },
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "main": "lib/cjs",
+  "module": "lib",
+  "es2015": "lib/es2015",
+  "fesm5": "lib/esm",
+  "types": "lib",
+  "files": [
+    "lib",
+    "!lib/*.tsbuildinfo"
+  ],
+  "peerDependencies": {
+    "rollup": "*"
+  },
+  "dependencies": {
+    "magic-string": "^0.25.6",
+    "rollup-pluginutils": "^2.8.2"
+  }
+}

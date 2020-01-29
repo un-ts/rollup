@@ -141,6 +141,6 @@ test('should wrap code correctly', async () => {
   } = await bundle.generate(format)
 
   expect(code).toMatch(
-    /^const wrap = \(\) => {}[\s\S]+export default wrapped;\s*$/,
+    /^const wrap = \(\) => {}[\S\s]+export default wrapped;\s*$/,
   )
 })

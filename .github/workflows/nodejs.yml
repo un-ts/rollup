@@ -35,7 +35,7 @@ jobs:
         run: |
           yarn global add codecov codacy-coverage
           codecov
-          cat ./coverage/lcov.info | codacy-coverage -u rx-ts -n rollup-plugin-insert
+          cat ./coverage/lcov.info | codacy-coverage -u rx-ts -n rollup
         env:
           CI: 'true'
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -53,10 +53,22 @@ jobs:
 
       - name: Publish GitHub Release and npm Package
         if: matrix.os == 'macOS-latest' && github.event_name == 'push' && github.ref	== 'refs/heads/master'
-        run: bash deploy.sh
+        run: |
+          git remote set-url origin "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+          git checkout master
+          npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
+          yarn lerna publish --create-release github --yes
         env:
           CI: 'true'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_BRANCH: master
-          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish beta npm Package
+        if: matrix.os == 'macOS-latest' && github.event_name == 'push' && github.ref	== 'refs/heads/develop'
+        run: |
+          npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
+          yarn lerna publish --canary --conventional-prerelease --force-publish --preid beta --pre-dist-tag beta --yes
+        env:
+          CI: 'true'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

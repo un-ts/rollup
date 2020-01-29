@@ -1,6 +1,9 @@
 {
   "name": "rollup",
   "version": 2,
+  "alias": [
+    "rollup.now.sh"
+  ],
   "github": {
     "silent": true
   },

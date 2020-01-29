@@ -1,44 +1,30 @@
 {
-  "name": "rollup-plugin-insert",
-  "version": "1.2.0",
-  "description": "string mutation plugin for rollup",
-  "repository": "https://github.com/JounQin/rollup-plugin-insert.git",
+  "name": "@rxts/rollup",
+  "version": "0.0.0",
+  "description": "Incredible Rollup plugins, make Rollup greater",
+  "repository": "https://github.com/rx-ts/rollup.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "main": "lib/cjs",
-  "module": "lib",
-  "es2015": "lib/es2015",
-  "fesm5": "lib/esm",
-  "types": "lib",
-  "files": [
-    "lib",
-    "!lib/*.tsbuildinfo"
+  "workspaces": [
+    "packages/*"
   ],
+  "private": true,
   "scripts": {
     "build": "run-p build:*",
     "build:r": "r -e named -p",
     "build:ts": "tsc -b",
-    "clean": "rimraf lib",
+    "clean": "rimraf packages/*/lib",
     "lint": "eslint . --cache --ext .js,.ts --max-warnings 10 -f friendly",
     "prepublishOnly": "yarn test && yarn build",
     "pretest": "yarn clean",
     "test": "jest",
     "type-coverage": "type-coverage --cache --detail --ignore-catch --ignore-files '**/*.d.ts' --strict"
   },
-  "peerDependencies": {
-    "rollup": "*"
-  },
-  "dependencies": {
-    "magic-string": "^0.25.6",
-    "rollup-pluginutils": "^2.8.2"
-  },
   "devDependencies": {
     "@1stg/lib-config": "^0.1.21",
     "@types/jest": "^25.1.0",
     "@types/node": "^13.5.1",
+    "lerna": "^3.20.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.1",
     "ts-jest": "^25.0.0",

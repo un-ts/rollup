@@ -1,5 +1,5 @@
 coverage
 node_modules
-/lib
-/test
-!/test/insert.spec.ts
+lib
+packages/*/test
+!/packages/*/test/*.ts
