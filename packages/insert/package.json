@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-insert",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "string mutation plugin for Rollup",
   "repository": "git+https://github.com/rx-ts/rollup.git",
   "homepage": "https://github.com/rx-ts/rollup/blob/master/packages/insert",
