@@ -38,9 +38,9 @@ export const transform = (
         let received: string
         try {
           received = JSON.stringify(output)
-        } catch (e) {
+        } catch {
           /* istanbul ignore next */
-          received = (output as object).toString()
+          received = String(output)
         }
         throw new TypeError(
           `The output content should be an instance of string or MagicString, but received: ${received}`,

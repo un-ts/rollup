@@ -2,7 +2,7 @@
   "name": "rollup",
   "version": 2,
   "alias": [
-    "rollup.now.sh"
+    "rollup.vercel.app"
   ],
   "github": {
     "silent": true

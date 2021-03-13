@@ -3,7 +3,7 @@ import path from 'path'
 
 import { rollup } from 'rollup'
 
-import insert from '..'
+import insert from '../index'
 
 const resolve = (file: string) => path.resolve(__dirname, file + '.js')
 const read = (file: string) => fs.readFileSync(resolve(file)).toString()
