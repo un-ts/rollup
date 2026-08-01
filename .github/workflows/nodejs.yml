@@ -6,12 +6,12 @@ jobs:
   default:
     strategy:
       matrix:
-        node: [12]
+        node: [18, 20, 22, 24, 26]
         os: [macOS-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
       - name: Setup yarn
